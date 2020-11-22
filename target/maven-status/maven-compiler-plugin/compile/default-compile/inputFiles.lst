@@ -1,0 +1,9 @@
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/controllers/PaisController.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/model/Usuario.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/repository/UsuarioRepository.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/Application.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/repository/TokenRepository.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/controllers/UsuarioController.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/model/Pais.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/repository/PaisRepository.java
+/home/alexandre/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/back-end.mngs/src/main/java/br/com/mngs/model/Token.java

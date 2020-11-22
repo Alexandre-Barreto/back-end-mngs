@@ -1,0 +1,6 @@
+br/com/mngs/repository/TokenRepository.class
+br/com/mngs/controllers/UsuarioController.class
+br/com/mngs/repository/UsuarioRepository.class
+br/com/mngs/Application.class
+br/com/mngs/repository/PaisRepository.class
+br/com/mngs/controllers/PaisController.class
