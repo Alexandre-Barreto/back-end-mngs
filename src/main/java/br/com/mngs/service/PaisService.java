@@ -17,7 +17,10 @@ import br.com.mngs.repository.TokenRepository;
 
 @Service
 public class PaisService {
-
+	
+	@Autowired
+	private TokenService tokenService;
+	
 	@Autowired
 	private TokenRepository tokenRepository;
 
@@ -26,7 +29,7 @@ public class PaisService {
 
 	public ResponseEntity<List<Pais>> listPaises(String token) {
 		Optional<Token> tokenResp = tokenRepository.findByToken(token);
-		if (tokenResp.isPresent()) {
+		if (tokenResp.isPresent() && tokenService.isAutorizado(tokenResp)) {
 			return ResponseEntity.ok(paisRepository.findAll());
 		}
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -35,7 +38,8 @@ public class PaisService {
 
 	public ResponseEntity<Pais> salvarPais(@Valid Pais pais, String token) {
 		Optional<Token> tokenResp = tokenRepository.findByToken(token);
-		if (tokenResp.isPresent() && tokenResp.get().getAdministrador()) {
+		if (tokenResp.isPresent() && tokenResp.get().getAdministrador() 
+				&& tokenService.isAutorizado(tokenResp)) {			
 			if (pais.getId() == 0) {
 				paisRepository.save(pais);
 				return ResponseEntity.ok(pais);
@@ -53,7 +57,7 @@ public class PaisService {
 
 	public ResponseEntity<Pais> pesquisarPais(String token, String nome) {
 		Optional<Token> tokenResp = tokenRepository.findByToken(token);
-		if (tokenResp.isPresent()) {
+		if (tokenResp.isPresent() && tokenService.isAutorizado(tokenResp)) {
 			Optional<Pais> paisResp = paisRepository.findByNome(nome.toUpperCase());
 			if (paisResp.isPresent()) {
 				return ResponseEntity.ok(paisResp.get());
@@ -66,7 +70,7 @@ public class PaisService {
 
 	public ResponseEntity<Boolean> excluirPais(String token, Long id) {
 		Optional<Token> tokenResp = tokenRepository.findByToken(token);
-		if (tokenResp.isPresent()) {
+		if (tokenResp.isPresent() && tokenService.isAutorizado(tokenResp)) {
 			if(paisRepository.findById(id).isPresent()) {
 				paisRepository.deleteById(id);
 				return ResponseEntity.ok(true);

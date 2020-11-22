@@ -38,4 +38,11 @@ public class TokenService {
     	}
 		return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
+    
+    public boolean isAutorizado(Optional<Token> token){
+		if(token.get().getExpiracao().isAfter(LocalDateTime.now())){
+			return true;			
+		}
+		return false;
+    }
 }
