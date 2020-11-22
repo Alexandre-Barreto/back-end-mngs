@@ -1,6 +1,15 @@
+br/com/mngs/model/UsuarioAutentincado.class
 br/com/mngs/repository/TokenRepository.class
 br/com/mngs/controllers/UsuarioController.class
 br/com/mngs/repository/UsuarioRepository.class
+br/com/mngs/model/Usuario.class
+br/com/mngs/model/Pais.class
 br/com/mngs/Application.class
+br/com/mngs/service/TokenService.class
+br/com/mngs/SpringFoxConfig.class
+br/com/mngs/model/Token.class
 br/com/mngs/repository/PaisRepository.class
+br/com/mngs/service/PaisService.class
 br/com/mngs/controllers/PaisController.class
+br/com/mngs/model/UserLogin.class
+br/com/mngs/service/UsuarioService.class
