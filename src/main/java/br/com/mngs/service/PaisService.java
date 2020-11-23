@@ -70,7 +70,8 @@ public class PaisService {
 
 	public ResponseEntity<Boolean> excluirPais(String token, Long id) {
 		Optional<Token> tokenResp = tokenRepository.findByToken(token);
-		if (tokenResp.isPresent() && tokenService.isAutorizado(tokenResp)) {
+		if (tokenResp.isPresent() && tokenService.isAutorizado(tokenResp)
+				&& tokenResp.get().getAdministrador()) {
 			if(paisRepository.findById(id).isPresent()) {
 				paisRepository.deleteById(id);
 				return ResponseEntity.ok(true);
